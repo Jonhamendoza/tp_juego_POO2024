@@ -1,0 +1,7 @@
+ Diplomatica.
+ Estudiante.
+ Negocios.
+ Residente.
+ Trabajo.
+ Transito.
+ Turismo.
