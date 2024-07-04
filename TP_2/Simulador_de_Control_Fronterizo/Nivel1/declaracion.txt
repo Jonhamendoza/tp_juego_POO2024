@@ -1,0 +1,6 @@
+-Declaracion Jurada-
+Duracion de la estancia:  
+Proposito del viaje:  
+Viaja solo o acompañado:  
+Ocupacion:  
+Detalles de bienes transportados:  

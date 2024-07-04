@@ -1,0 +1,16 @@
+000 Ingeniero
+001 Profesor
+002 Abogado
+003 Chef
+004 Escritor
+005 Policía
+006 Bombero
+007 Científico
+008 Artista
+009 Astronauta
+010 Arquitecto
+011 Piloto
+012 Periodista
+013 Diseñador
+014 Aldeano
+015 Diplomático
