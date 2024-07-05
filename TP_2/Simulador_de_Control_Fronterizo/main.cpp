@@ -38,7 +38,7 @@ int main()
     while ((Puntuacion>=0) && (Puntuacion<100) && (Multa<4)) {
         Solicitudes=nivelInicial.getSolicitudes();
         for(int i=0; i<30;i++){
-            cout<<Solicitudes[i];
+            cout<<Solicitudes[i]<<endl;
         }
         cout<<endl;
         cout<<endl;
