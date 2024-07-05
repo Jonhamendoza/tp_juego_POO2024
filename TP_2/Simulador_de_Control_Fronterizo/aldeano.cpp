@@ -33,7 +33,7 @@ std::string* Aldeano ::getPasaporte(){
 std::string* Aldeano ::getDeclaracion(){
     std::ifstream formatoDeclaracion;
     std::string* Declaracion = new std::string [6];
-    formatoDeclaracion.open("Nivel1/Pasaporte.txt");
+    formatoDeclaracion.open("Nivel1/declaracion.txt");
     if(formatoDeclaracion.fail()){
         std::cout<<" Error al intentar abrir archivo Declaracion \n";
     }
