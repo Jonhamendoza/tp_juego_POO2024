@@ -88,7 +88,15 @@ std::string* Nivel1::getSolicitudes(){
     for(int i=0; i<7; i++){
         std::getline(visas,vISAS[i]);
     }
-
+    nombre.close();
+    nacionalidad.close();
+    tipo_de_visita.close();
+    estado_civil.close();
+    paises.close();
+    propositos.close();
+    visas.close();
+    bienes_transportados.close();
+    antecedentes.close();
     // ///////////////////////////////////////////////////////////////////////////////
     Aldeano auxAldeano;
     Diplomatico auxDiplomatico;
@@ -115,11 +123,11 @@ std::string* Nivel1::getSolicitudes(){
         for(int i=0;i<15;i++){
             solicitud[i]=pasaporteAldeano[i];
         }
-        for(int i=15;i<24;i++){
-            solicitud[i]=IdAldeano[i];
+        for(int i=0;i<9;i++){
+            solicitud[i+15]=IdAldeano[i];
         }
-        for(int i=24;i<30;i++){
-            solicitud[i]=DeclaracionALdeano[i];
+        for(int i=0;i<6;i++){
+            solicitud[i+24]=DeclaracionALdeano[i];
         }
         tipoPersona = "Aldeano";
         break;
@@ -127,11 +135,11 @@ std::string* Nivel1::getSolicitudes(){
         for(int i=0;i<15;i++){
             solicitud[i]=pasaporteDiplomatico[i];
         }
-        for(int i=15;i<24;i++){
-            solicitud[i]=IdDiplomatico[i];
+        for(int i=0;i<9;i++){
+            solicitud[i+15]=IdDiplomatico[i];
         }
-        for(int i=24;i<30;i++){
-            solicitud[i]=DeclaracionDiplomatico[i];
+        for(int i=0;i<6;i++){
+            solicitud[i+24]=DeclaracionDiplomatico[i];
         }
         tipoPersona = "Diplomatico";
         break;
@@ -139,11 +147,11 @@ std::string* Nivel1::getSolicitudes(){
         for(int i=0;i<15;i++){
             solicitud[i]=pasaporteRefugiado[i];
         }
-        for(int i=15;i<24;i++){
-            solicitud[i]=IdRefugiado[i];
+        for(int i=0;i<9;i++){
+            solicitud[i+15]=IdRefugiado[i];
         }
-        for(int i=24;i<30;i++){
-            solicitud[i]=DeclaracionRefugiado[i];
+        for(int i=0;i<6;i++){
+            solicitud[i+24]=DeclaracionRefugiado[i];
         }
         tipoPersona = "Refugiado Politico";
         break;
@@ -151,16 +159,29 @@ std::string* Nivel1::getSolicitudes(){
         for(int i=0;i<15;i++){
             solicitud[i]=pasaporteRevolucionario[i];
         }
-        for(int i=15;i<24;i++){
-            solicitud[i]=IdRevolucionario[i];
+        for(int i=0;i<9;i++){
+            solicitud[i+15]=IdRevolucionario[i];
         }
-        for(int i=24;i<30;i++){
-            solicitud[i]=DeclaracionRevolucionario[i];
+        for(int i=0;i<6;i++){
+            solicitud[i+24]=DeclaracionRevolucionario[i];
         }
         tipoPersona = "Revolucionario";
         break;
 
     }
+    delete [] pasaporteAldeano;
+    delete [] pasaporteDiplomatico;
+    delete [] pasaporteRefugiado;
+    delete [] pasaporteRevolucionario;
+    delete [] IdAldeano;
+    delete [] IdDiplomatico;
+    delete [] IdRefugiado;
+    delete [] IdRevolucionario;
+    delete [] DeclaracionALdeano;
+    delete [] DeclaracionDiplomatico;
+    delete [] DeclaracionRefugiado;
+    delete [] DeclaracionRevolucionario;
+
     int aux0_20=rand()%20;
     int auxRandomDuracionEstadia=(rand()%48)+1;
     int aux0_10=rand()%10;
@@ -190,5 +211,14 @@ std::string* Nivel1::getSolicitudes(){
     solicitud[27]+="Solo";
     solicitud[28]+=tipoPersona;
     solicitud[29]+= bienesTransportados[aux0_10];
+    delete [] nombres;
+    delete [] pAISES;
+    delete [] nacionalidades;
+    delete [] vISAS;
+    delete [] pROPOSITOS;
+    delete [] bienesTransportados;
+    delete [] aNTECE;
+    delete [] estadosCiviles;
+    delete [] tiposDeVisitas;
     return solicitud;
 }
