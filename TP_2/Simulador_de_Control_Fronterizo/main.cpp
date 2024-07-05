@@ -22,7 +22,6 @@ int main()
     Jugador jugador(nombreJugador);
     Nivel1 nivelInicial;
     string* reglasNivel1 = new string [6];
-    string* Solicitudes = new string[30];
     reglasNivel1=nivelInicial.getReglas();
     cout<<endl;
     cout<<endl;
@@ -31,12 +30,16 @@ int main()
     for(int i=0;i<6;i++){
         cout<<reglasNivel1[i]<<endl;
     }
+    delete [] reglasNivel1;
     cout<<endl;
     cout<<endl;
     cout<<endl;
     int auxTipoPersona=1;
-    while ((Puntuacion>=0) && (Puntuacion<100) && (Multa<4)) {
+    do {
+        string* Solicitudes = new string[30];
+
         Solicitudes=nivelInicial.getSolicitudes();
+
         for(int i=0; i<30;i++){
             cout<<Solicitudes[i]<<endl;
         }
@@ -49,6 +52,8 @@ int main()
         } else if(Solicitudes[22]=="Revolucionario"){
             auxTipoPersona=4;
         }
+
+        delete [] Solicitudes;
         Decision=jugador.tomarDecision();
         if(Decision==1){
             switch(auxTipoPersona){
@@ -86,5 +91,6 @@ int main()
             }
         }
     }
+    while ((Puntuacion<100) ) ;
     return 0;
 }
