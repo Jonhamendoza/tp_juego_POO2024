@@ -6,6 +6,7 @@
 #include "nivel3.h"
 #include "nivel4.h"
 #include "nivelfinal.h"
+
 //#include "aldeano.h"
 
 using namespace std;
@@ -23,6 +24,7 @@ int main()
     Nivel1 nivelInicial;
     string* reglasNivel1 = new string [6];
     reglasNivel1=nivelInicial.getReglas();
+
     cout<<endl;
     cout<<endl;
     cout<<endl;
@@ -34,26 +36,24 @@ int main()
     cout<<endl;
     cout<<endl;
     cout<<endl;
-    int auxTipoPersona=1;
+    int auxTipoPersona=0;
     do {
-        string* Solicitudes = new string[30];
 
-        Solicitudes=nivelInicial.getSolicitudes();
+        cout<<"Su puntuacion es: "<<Puntuacion<<endl;
+        string Solicitudes[30];
 
+
+       nivelInicial.getSolicitudes(Solicitudes, auxTipoPersona);
+       // cout<<"aca!!\n";
         for(int i=0; i<30;i++){
             cout<<Solicitudes[i]<<endl;
         }
+        cout<<Solicitudes[22];
         cout<<endl;
         cout<<endl;
-        if(Solicitudes[22]=="Diplomatico"){
-            auxTipoPersona=2;
-        } else if(Solicitudes[22]=="Refugiado Politico"){
-            auxTipoPersona=3;
-        } else if(Solicitudes[22]=="Revolucionario"){
-            auxTipoPersona=4;
-        }
+       //
 
-        delete [] Solicitudes;
+       //delete[] Solicitudes;
         Decision=jugador.tomarDecision();
         if(Decision==1){
             switch(auxTipoPersona){
@@ -72,8 +72,7 @@ int main()
                 break;
             }
 
-        }
-        if(Decision==2){
+        }else if(Decision==2){
             switch(auxTipoPersona){
             case 1:
                 Puntuacion-=15;
