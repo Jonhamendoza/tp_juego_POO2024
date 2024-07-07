@@ -10,6 +10,6 @@ class NivelFinal : public Nivel
 public:
     NivelFinal();
     std::string* getReglas();
-    std::string* getSolicitudes();
+    void getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona);
 };
 #endif // NIVELFINAL_H
