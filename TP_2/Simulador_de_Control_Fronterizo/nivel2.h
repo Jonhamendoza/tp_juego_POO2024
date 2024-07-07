@@ -10,7 +10,7 @@ class Nivel2 : public Nivel
 public:
     Nivel2();
     std::string* getReglas();
-    std::string* getSolicitudes();
+    void getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona);
 };
 
 
