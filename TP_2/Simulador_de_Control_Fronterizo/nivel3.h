@@ -10,7 +10,7 @@ class Nivel3 : public Nivel
 public:
     Nivel3();
     std::string* getReglas();
-    std::string* getSolicitudes();
+    void getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona);
 };
 
 #endif // NIVEL3_H
