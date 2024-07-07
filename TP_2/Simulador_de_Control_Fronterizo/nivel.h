@@ -7,7 +7,8 @@
 #include "diplomatico.h"
 #include "refugiadopolitico.h"
 #include "revolucionario.h"
-
+#include <time.h>
+#include <vector>
 class Nivel
 {
 private:
@@ -15,7 +16,7 @@ private:
 public:
     Nivel();
     std::string* getReglas();
-    std::string* getSolicitudes();
+    void getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona);
 };
 
 #endif // NIVEL_H
