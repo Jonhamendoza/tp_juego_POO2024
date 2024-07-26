@@ -149,9 +149,9 @@ void Nivel1::getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona) {
     solicitud[9] += "31/12/2030";
     solicitud[10] += pAISES[aux0_10] + " | " + pAISES[aux0_10 + 10];
 
-    solicitud[12] += vISAS[aux0_4] + " | " + vISAS[aux0_4 + 4];
+    solicitud[12] += vISAS[aux0_4] + " | " + vISAS[aux0_4 + 3];
 
-    solicitud[13] += pROPOSITOS[rand() % 51];
+    solicitud[13] += pROPOSITOS[rand() % 40];
     solicitud[14] += bienesTransportados[aux0_10];
 
     solicitud[16] += nombres[aux0_20];

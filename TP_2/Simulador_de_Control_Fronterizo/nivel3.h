@@ -9,8 +9,10 @@ class Nivel3 : public Nivel
 {
 public:
     Nivel3();
-    std::string* getReglas();
-    void getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona);
+    std::string* getReglas(int* &aux);
+    void getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona, int* &auxSolicitudes);
+    bool verificarParametros(int *auxReglas, int *auxSolicitudes);
+
 };
 
 #endif // NIVEL3_H

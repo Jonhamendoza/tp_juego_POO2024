@@ -1,8 +1,0 @@
-000 Sentencia de Prision
-001 Multa
-002 Libertad Condicional o Vigilada
-003 Trabajo Comunitario
-004 Libertad Bajo Palabra
-005 Pena Suspendida
-006 Cargos retirados
-007 Registro Criminal

@@ -19,7 +19,11 @@ int main()
     getline(cin,nombreJugador);
 
     // CREACION DE VALORES //
-
+    int* auxReglas_2=new int[2];
+    int* auxReglas_3=new int[2];
+    int* auxReglas_4=new int[5];
+    int* auxReglas_Final=new int[5];
+    int* auxSolicitudes=new int[4];
     int Puntuacion=0;
     int Decision;
     int Multa=0;
@@ -32,23 +36,23 @@ int main()
     reglasNivel1=nivelInicial.getReglas();
     //NIVEL2
     Nivel2 nivel2;
-    string* reglasNivel2 = new string [6];
-    reglasNivel2=nivel2.getReglas();
+    string* reglasNivel2 = new string [8];
+    reglasNivel2=nivel2.getReglas(auxReglas_2);
     //NIVEL3
     Nivel3 nivel3;
-    string* reglasNivel3 = new string [6];
-    reglasNivel3=nivel3.getReglas();
+    string* reglasNivel3 = new string [8];
+    reglasNivel3=nivel3.getReglas(auxReglas_3);
     //NIVEL4
     Nivel4 nivel4;
-    string* reglasNivel4 = new string [6];
-    reglasNivel4=nivel4.getReglas();
+    string* reglasNivel4 = new string [14];
+    reglasNivel4=nivel4.getReglas(auxReglas_4);
     //NIVEL FINAL
     NivelFinal nivelFinal;
-    string* reglasNivelFinal = new string [6];
-    reglasNivelFinal=nivelFinal.getReglas();
+    string* reglasNivelFinal = new string [14];
+    reglasNivelFinal=nivelFinal.getReglas(auxReglas_Final);
 
     cout<<endl;
-    cout<<endl;
+    cout<<"Para una mejor experiencia se recomienda utilizar la consola externa en pantalla completa";
     cout<<endl;
 
     for(int i=0;i<6;i++){
@@ -66,18 +70,18 @@ int main()
 
 
        nivelInicial.getSolicitudes(Solicitudes, auxTipoPersona);
-       // cout<<"aca!!\n";
-        for(int i=0; i<30;i++){
-            cout<<Solicitudes[i]<<endl;
+       for(int i=0; i<30;i++){
+           cout<<Solicitudes[i]<<endl;
         }
 
         cout<<endl;
         cout<<endl;
-       //
-
-
-        Decision=jugador.tomarDecision();
-        if(Decision==1){
+       Decision=jugador.tomarDecision();
+       while ((Decision!=1) and (Decision!=2)  ) {
+           cout<<"Ingrese una opcion correcta.\n";
+           Decision=jugador.tomarDecision();
+       }
+       if(Decision==1){
             switch(auxTipoPersona){
             case 1:
                 Puntuacion+=10;
@@ -119,7 +123,7 @@ int main()
         cout<<"Cantidad de Multas recibidas: "<<Multa<<endl;
     }
 
-    for(int i=0;i<6;i++){
+    for(int i=0;i<8;i++){
         cout<<reglasNivel2[i]<<endl;
     }
     delete [] reglasNivel2;
@@ -131,28 +135,42 @@ int main()
         string Solicitudes[30];
 
 
-       nivel2.getSolicitudes(Solicitudes, auxTipoPersona);
-       // cout<<"aca!!\n";
-        for(int i=0; i<30;i++){
+       nivel2.getSolicitudes(Solicitudes, auxTipoPersona, auxSolicitudes);
+       for(int i=0; i<30;i++){
             cout<<Solicitudes[i]<<endl;
         }
 
         cout<<endl;
         cout<<endl;
-       //
+
 
 
         Decision=jugador.tomarDecision();
+        while ((Decision!=1) and (Decision!=2)  ) {
+            cout<<"Ingrese una opcion correcta.\n";
+            Decision=jugador.tomarDecision();
+        }
         if(Decision==1){
             switch(auxTipoPersona){
             case 1:
-                Puntuacion+=10;
+                if(nivel2.verificarParametros(auxReglas_2,auxSolicitudes))
+                    Puntuacion+=10;
+                else
+                    Puntuacion-=15;
                 break;
             case 2:
-                Puntuacion+=15;
+                if(nivel2.verificarParametros(auxReglas_2,auxSolicitudes))
+                    Puntuacion+=15;
+                else
+                    Puntuacion-=25;
                 break;
             case 3:
-                Puntuacion+=25;
+                if(nivel2.verificarParametros(auxReglas_2,auxSolicitudes))
+                    Puntuacion+=25;
+                else{
+                    Puntuacion-=25;
+                    Multa++;
+                }
                 break;
             case 4:
                 Puntuacion-=25;
@@ -163,14 +181,18 @@ int main()
         }else if(Decision==2){
             switch(auxTipoPersona){
             case 1:
+                if(nivel2.verificarParametros(auxReglas_2,auxSolicitudes))
                 Puntuacion-=15;
                 break;
             case 2:
+                if(nivel2.verificarParametros(auxReglas_2,auxSolicitudes))
                 Puntuacion-=25;
                 break;
             case 3:
+                if(nivel2.verificarParametros(auxReglas_2,auxSolicitudes)){
                 Puntuacion-=25;
                 Multa++;
+                }
                 break;
             case 4:
                 Puntuacion-=0;
@@ -185,7 +207,7 @@ int main()
         cout<<"Cantidad de Multas recibidas: "<<Multa<<endl;
     }
 
-    for(int i=0;i<6;i++){
+    for(int i=0;i<8;i++){
         cout<<reglasNivel3[i]<<endl;
     }
     delete [] reglasNivel3;
@@ -197,28 +219,42 @@ int main()
         string Solicitudes[30];
 
 
-       nivel3.getSolicitudes(Solicitudes, auxTipoPersona);
-       // cout<<"aca!!\n";
-        for(int i=0; i<30;i++){
+       nivel3.getSolicitudes(Solicitudes, auxTipoPersona, auxSolicitudes);
+       for(int i=0; i<30;i++){
             cout<<Solicitudes[i]<<endl;
         }
 
         cout<<endl;
         cout<<endl;
-       //
+
 
 
         Decision=jugador.tomarDecision();
+        while ((Decision!=1) and (Decision!=2)  ) {
+            cout<<"Ingrese una opcion correcta.\n";
+            Decision=jugador.tomarDecision();
+        }
         if(Decision==1){
             switch(auxTipoPersona){
             case 1:
-                Puntuacion+=10;
+                if(nivel3.verificarParametros(auxReglas_3,auxSolicitudes))
+                    Puntuacion+=10;
+                else
+                    Puntuacion-=15;
                 break;
             case 2:
-                Puntuacion+=15;
+                if(nivel3.verificarParametros(auxReglas_3,auxSolicitudes))
+                    Puntuacion+=15;
+                else
+                    Puntuacion-=25;
                 break;
             case 3:
-                Puntuacion+=25;
+                if(nivel3.verificarParametros(auxReglas_3,auxSolicitudes))
+                    Puntuacion+=25;
+                else{
+                    Puntuacion-=25;
+                    Multa++;
+                }
                 break;
             case 4:
                 Puntuacion-=25;
@@ -229,14 +265,18 @@ int main()
         }else if(Decision==2){
             switch(auxTipoPersona){
             case 1:
-                Puntuacion-=15;
+                if(nivel3.verificarParametros(auxReglas_3,auxSolicitudes))
+                    Puntuacion-=15;
                 break;
             case 2:
-                Puntuacion-=25;
+                if(nivel3.verificarParametros(auxReglas_3,auxSolicitudes))
+                    Puntuacion-=25;
                 break;
             case 3:
-                Puntuacion-=25;
-                Multa++;
+                if(nivel3.verificarParametros(auxReglas_3,auxSolicitudes)){
+                    Puntuacion-=25;
+                    Multa++;
+                }
                 break;
             case 4:
                 Puntuacion-=0;
@@ -251,7 +291,7 @@ int main()
         cout<<"Cantidad de Multas recibidas: "<<Multa<<endl;
     }
 
-    for(int i=0;i<6;i++){
+    for(int i=0;i<14;i++){
         cout<<reglasNivel4[i]<<endl;
     }
     delete [] reglasNivel4;
@@ -263,28 +303,42 @@ int main()
         string Solicitudes[30];
 
 
-       nivel4.getSolicitudes(Solicitudes, auxTipoPersona);
-       // cout<<"aca!!\n";
-        for(int i=0; i<30;i++){
+       nivel4.getSolicitudes(Solicitudes, auxTipoPersona, auxSolicitudes);
+       for(int i=0; i<30;i++){
             cout<<Solicitudes[i]<<endl;
         }
 
         cout<<endl;
         cout<<endl;
-       //
+
 
 
         Decision=jugador.tomarDecision();
+        while ((Decision!=1) and (Decision!=2)  ) {
+            cout<<"Ingrese una opcion correcta.\n";
+            Decision=jugador.tomarDecision();
+        }
         if(Decision==1){
             switch(auxTipoPersona){
             case 1:
-                Puntuacion+=10;
+                if(nivel4.verificarParametros(auxReglas_4,auxSolicitudes))
+                    Puntuacion+=10;
+                else
+                    Puntuacion-=15;
                 break;
             case 2:
-                Puntuacion+=15;
+                if(nivel4.verificarParametros(auxReglas_4,auxSolicitudes))
+                    Puntuacion+=15;
+                else
+                    Puntuacion-=25;
                 break;
             case 3:
-                Puntuacion+=25;
+                if(nivel4.verificarParametros(auxReglas_4,auxSolicitudes))
+                    Puntuacion+=25;
+                else{
+                    Puntuacion-=25;
+                    Multa++;
+                }
                 break;
             case 4:
                 Puntuacion-=25;
@@ -295,14 +349,18 @@ int main()
         }else if(Decision==2){
             switch(auxTipoPersona){
             case 1:
-                Puntuacion-=15;
+                if(nivel4.verificarParametros(auxReglas_4,auxSolicitudes))
+                    Puntuacion-=15;
                 break;
             case 2:
-                Puntuacion-=25;
+                if(nivel4.verificarParametros(auxReglas_4,auxSolicitudes))
+                    Puntuacion-=25;
                 break;
             case 3:
-                Puntuacion-=25;
-                Multa++;
+                if(nivel4.verificarParametros(auxReglas_4,auxSolicitudes)){
+                    Puntuacion-=25;
+                    Multa++;
+                }
                 break;
             case 4:
                 Puntuacion-=0;
@@ -317,7 +375,7 @@ int main()
         cout<<"Cantidad de Multas recibidas: "<<Multa<<endl;
     }
 
-    for(int i=0;i<6;i++){
+    for(int i=0;i<14;i++){
         cout<<reglasNivelFinal[i]<<endl;
     }
     delete [] reglasNivelFinal;
@@ -329,28 +387,42 @@ int main()
         string Solicitudes[30];
 
 
-       nivelFinal.getSolicitudes(Solicitudes, auxTipoPersona);
-       // cout<<"aca!!\n";
-        for(int i=0; i<30;i++){
+       nivelFinal.getSolicitudes(Solicitudes, auxTipoPersona, auxSolicitudes);
+       for(int i=0; i<30;i++){
             cout<<Solicitudes[i]<<endl;
         }
 
         cout<<endl;
         cout<<endl;
-       //
+
 
 
         Decision=jugador.tomarDecision();
+        while ((Decision!=1) and (Decision!=2)  ) {
+            cout<<"Ingrese una opcion correcta.\n";
+            Decision=jugador.tomarDecision();
+        }
         if(Decision==1){
             switch(auxTipoPersona){
             case 1:
-                Puntuacion+=10;
+                if(nivelFinal.verificarParametros(auxReglas_Final,auxSolicitudes))
+                    Puntuacion+=10;
+                else
+                    Puntuacion-=15;
                 break;
             case 2:
-                Puntuacion+=15;
+                if(nivelFinal.verificarParametros(auxReglas_Final,auxSolicitudes))
+                    Puntuacion+=15;
+                else
+                    Puntuacion-=25;
                 break;
             case 3:
-                Puntuacion+=25;
+                if(nivelFinal.verificarParametros(auxReglas_Final,auxSolicitudes))
+                    Puntuacion+=25;
+                else{
+                    Puntuacion-=25;
+                    Multa++;
+                }
                 break;
             case 4:
                 Puntuacion-=25;
@@ -361,14 +433,18 @@ int main()
         }else if(Decision==2){
             switch(auxTipoPersona){
             case 1:
-                Puntuacion-=15;
+                if(nivelFinal.verificarParametros(auxReglas_Final,auxSolicitudes))
+                    Puntuacion-=15;
                 break;
             case 2:
-                Puntuacion-=25;
+                if(nivelFinal.verificarParametros(auxReglas_Final,auxSolicitudes))
+                    Puntuacion-=25;
                 break;
             case 3:
-                Puntuacion-=25;
-                Multa++;
+                if(nivelFinal.verificarParametros(auxReglas_Final,auxSolicitudes)){
+                    Puntuacion-=25;
+                    Multa++;
+                }
                 break;
             case 4:
                 Puntuacion-=0;

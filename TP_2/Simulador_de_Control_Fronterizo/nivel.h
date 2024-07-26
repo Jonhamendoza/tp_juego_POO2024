@@ -15,8 +15,9 @@ private:
     int numeroNivel;
 public:
     Nivel();
-    std::string* getReglas();
+    std::string* getReglas(int *aux);
     void getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona);
+    bool verificarParametros(std::string* Reglas, std::string* Solicitudes, int *aux);
 };
 
 #endif // NIVEL_H
