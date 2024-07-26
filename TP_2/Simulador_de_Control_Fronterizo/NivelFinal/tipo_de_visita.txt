@@ -1,10 +1,10 @@
-000 Turismo
-001 Negocios
-002 Estudios
-003 Trabajo
-004 Visita a Familiares o Amigos
-005 Salud
-006 Religión/Peregrinacion
-007 Deportes
-008 Investigación
-009 Aventura
+ Turismo
+ Negocios
+ Estudios
+ Trabajo
+ Visita a Familiares o Amigos
+ Salud
+ Religion/Peregrinacion
+ Deportes
+ Investigacion
+ Aventura

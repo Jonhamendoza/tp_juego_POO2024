@@ -1,7 +1,0 @@
-001 Tipo de Visa: Diplomatica.
-002 Tipo de Visa: Estudiante.
-003 Tipo de Visa: Negocios.
-004 Tipo de Visa: Residente.
-005 Tipo de Visa: Trabajo.
-006 Tipo de Visa: Transito.
-007 Tipo de Visa: Turismo.

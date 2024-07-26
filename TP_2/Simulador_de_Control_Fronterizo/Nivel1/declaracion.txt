@@ -2,5 +2,5 @@
 Duracion de la estancia:  
 Proposito del viaje:  
 Viaja solo o acompañado:  
-Ocupacion:
+Ocupacion:  
 Detalles de bienes transportados:  

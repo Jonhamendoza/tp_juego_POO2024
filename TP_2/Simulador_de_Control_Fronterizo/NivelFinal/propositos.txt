@@ -1,60 +1,40 @@
-Propósitos del viaje para cada tipo de visita
-000 Turismo
-001: Visitar lugares históricos
-002: Vacaciones en la playa
-003: Participar en un tour cultural
-004: Recolección de plantas exóticas
-
-010 Negocios
-011: Asistir a una conferencia
-012: Reunión de negocios con clientes
-013: Negociación de contratos
-014: Negociación de materiales no especificados
-
-020 Estudios
-021: Asistir a un curso universitario
-022: Participar en un intercambio estudiantil
-023: Realizar una investigación académica
-024: Inscripción en un curso de corta duración sin carta de aceptación
-
-030 Trabajo
-031: Empleo temporal en una empresa
-032: Transferencia interna de la empresa
-033: Proyecto de consultoría
-034: Buscar oportunidades de negocio sin contrato previo
-
-040 Visita a Familiares o Amigos
-041: Asistir a una reunión familiar
-042: Visitar a un amigo enfermo
-043: Celebrar un evento familiar
-044: Visitar a un amigo que no ha sido visto en años sin invitación
-
-050 Salud
-051: Tratamiento médico especializado
-052: Realizar una cirugía programada
-053: Consultas médicas y chequeos
-054: Tratamiento experimental no aprobado
-
-060 Religión/Peregrinacion
-061: Participar en una peregrinación anual
-062: Asistir a un festival religioso
-063: Visitar un sitio sagrado
-064: Participar en un ritual no reconocido oficialmente
-
-070 Deportes
-071: Competir en un torneo internacional
-072: Participar en un campamento de entrenamiento
-073: Asistir a un evento deportivo como espectador
-074: Competir en eventos deportivos ilegales
-
-080 Investigación
-081: Recopilar datos de campo
-082: Colaborar en un proyecto de investigación con una universidad
-083: Asistir a un seminario de investigación
-084: Realizar investigación en áreas restringidas
-
-090 Aventura
-091: Practicar deportes extremos como el paracaidismo
-092: Realizar una expedición de senderismo
-093: Participar en una aventura de safari
-094: Exploración de áreas prohibidas
+ Visitar lugares historicos
+ Vacaciones en la playa
+ Participar en un tour cultural
+ Recoleccion de plantas exoticas
+ Asistir a una conferencia
+ Reunion de negocios con clientes
+ Negociacion de contratos
+ Negociacion de materiales no especificados
+ Asistir a un curso universitario
+ Participar en un intercambio estudiantil
+ Realizar una investigación academica
+ Inscripcion en un curso sin carta de aceptación
+ Empleo temporal en una empresa
+ Transferencia interna de la empresa
+ Proyecto de consultoria
+ Buscar oportunidades de negocio sin contrato previo
+ Asistir a una reunion familiar
+ Visitar a un amigo enfermo
+ Celebrar un evento familiar
+ Visitar a un amigo que no ha sido visto en años
+ Tratamiento medico especializado
+ Realizar una cirugia programada
+ Consultas medicas y chequeos
+ Tratamiento experimental no aprobado
+ Participar en una peregrinacion anual
+ Asistir a un festival religioso
+ Visitar un sitio sagrado
+ Participar en un ritual no reconocido oficialmente
+ Competir en un torneo internacional
+ Participar en un campamento de entrenamiento
+ Asistir a un evento deportivo como espectador
+ Competir en eventos deportivos ilegales
+ Recopilar datos de campo
+ Colaborar en un proyecto con una universidad
+ Asistir a un seminario de investigacion
+ Realizar investigacion en areas restringidas
+ Practicar deportes extremos como el paracaidismo
+ Realizar una expedicion de senderismo
+ Participar en una aventura de safari
+ Exploracion de áreas prohibidas

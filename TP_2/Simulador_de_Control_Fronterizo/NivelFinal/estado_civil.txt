@@ -1,10 +1,10 @@
-000 Soltero/a
-001 Casado/a
-002 Divorciado/a
-003 Viudo/a
-004 Separado/a
-005 Comprometido/a
-006 Unión Libre (o en convivencia)
-007 Pareja de Hecho
-008 Anulado/a (en el caso de matrimonios religiosos anulados)
-009 Unión Civil
+ Soltero/a
+ Casado/a
+ Divorciado/a
+ Viudo/a
+ Separado/a
+ Comprometido/a
+ Unión Libre (o en convivencia)
+ Pareja de Hecho
+ Anulado/a (en el caso de matrimonios religiosos anulados)
+ Unión Civil

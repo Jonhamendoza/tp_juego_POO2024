@@ -1,9 +1,9 @@
 -Identificacion Personal-
-Nombre Completo:            ####
-Fecha de Nacimiento:        ####
-Lugar de Nacimiento:        ####
-Sexo:                       ####
-Nacionalidad:               ####
-Estado Civil:               ####
-Ocupacion:                  ####
-Antecedentes:               ####
+Nombre Completo:            
+Fecha de Nacimiento:        
+Lugar de Nacimiento:        
+Sexo:                       
+Nacionalidad:               
+Estado Civil:               
+Ocupacion:                  
+Antecedentes:               
