@@ -6,12 +6,14 @@ Aldeano::Aldeano()
 
 }
 std::string* Aldeano ::getID(){
+   // declaracion y apertura de archivos
     std::ifstream formatoID;
     std::string* ID = new std::string [9];
     formatoID.open("Nivel1/ID.txt");
     if(formatoID.fail()){
         std::cout<<" Error al intentar abrir archivo ID \n";
     }
+
     for(int i=0; i<9; i++){
         std::getline(formatoID,ID[i]);
     }
@@ -19,6 +21,7 @@ std::string* Aldeano ::getID(){
 }
 
 std::string* Aldeano ::getPasaporte(){
+    // declaracion y apertura de archivos
     std::ifstream formatoPasaporte;
     std::string* Pasaporte = new std::string [15];
     formatoPasaporte.open("Nivel1/Pasaporte.txt");
@@ -31,6 +34,7 @@ std::string* Aldeano ::getPasaporte(){
     return Pasaporte;
 }
 std::string* Aldeano ::getDeclaracion(){
+   // declaracion y apertura de archivos
     std::ifstream formatoDeclaracion;
     std::string* Declaracion = new std::string [6];
     formatoDeclaracion.open("Nivel1/declaracion.txt");

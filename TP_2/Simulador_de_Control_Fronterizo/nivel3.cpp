@@ -5,16 +5,17 @@ Nivel3::Nivel3()
 
 }
 std::string* Nivel3::getReglas(int* &aux) {
+    // declaracion y apertura de archivos
     std::ifstream reglasNivel3, reglas, nacionalidades, tipo_de_visita, estado_civil, paises;
     std::string* carpetaReglas = new std::string[8];
     std::string* Nacionalidades = new std::string[20];
     std::string* Tipo_de_visita = new std::string[10];
     std::string* Estado_civil = new std::string[10];
     std::string* Paises = new std::string[20];
-    int aux_Random_Nacionalidad=std::rand()%20;
-    int aux_Random_Tipo_de_Visita=std::rand()%10;
-    aux[0]=aux_Random_Nacionalidad;
-    aux[1]=aux_Random_Tipo_de_Visita;
+    int aux_Random_Nacionalidad=std::rand()%20; // generacion de numeros aleatorios para completar las reglas usando
+    int aux_Random_Tipo_de_Visita=std::rand()%10;    // el numero como indice de los arreglos con los datos tomados de los archivos
+    aux[0]=aux_Random_Nacionalidad; // almacena los numeros aleatorios en el arreglo pasado por referencia
+    aux[1]=aux_Random_Tipo_de_Visita;   // para usarlos en la funcion verificarParametros()
 
     reglas.open("Nivel3/reglas.txt");
     if (reglas.fail()) {
@@ -41,12 +42,14 @@ std::string* Nivel3::getReglas(int* &aux) {
         std::cout << "Error al intentar abrir el archivo paises del nivel 3\n";
     }
 
+    // toma de datos de los archivos
     for (int i = 0; i < 8; i++) {
-        std::getline(reglas, carpetaReglas[i]);
+        std::getline(reglas, carpetaReglas[i]);     // se establece el formato de la declaracion de reglas del nivel
         std::string aux;
-        std::getline(reglasNivel3, aux);
+        std::getline(reglasNivel3, aux);     // se completa la declaracion con las reglas especificas del nivel
         carpetaReglas[i] += aux;
     }
+    // toma de archivos adicionales
     for(int i=0;i<20;i++){
         std::getline(nacionalidades,Nacionalidades[i]);
         std::getline(paises,Paises[i]);
@@ -61,6 +64,7 @@ std::string* Nivel3::getReglas(int* &aux) {
     paises.close();
     reglas.close();
     reglasNivel3.close();
+    // se completa la declaracion de reglas con los detalles a controlar por el jugador
     carpetaReglas[1]+=Nacionalidades[aux_Random_Nacionalidad];
     carpetaReglas[3]+=Tipo_de_visita[aux_Random_Tipo_de_Visita];
     carpetaReglas[5]+=Estado_civil[aux_Random_Tipo_de_Visita];
@@ -179,11 +183,14 @@ void Nivel3::getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona, int
     int aux0_8 = rand()%8;
     int aux0_4 = rand()%4;
     std::string duracionEstadia = std::to_string(auxRandomDuracionEstadia);
+
+    // se almacenan los valores aleatorios que marcan el indice en los arreglos
+    // de los datos de la solicitud que se deben controlar en la funcion verificarParametros()
     auxSolicitudes[0]=aux0_20;
     auxSolicitudes[1]=aux0_40;
     auxSolicitudes[2]=aux0_10;
-    solicitud[1] += nombres[aux0_20];
 
+    solicitud[1] += nombres[aux0_20];
     solicitud[2] += "  /  /    ";
     solicitud[3] += pAISES[aux0_20];
     solicitud[4] += "No definido";
@@ -217,10 +224,17 @@ void Nivel3::getSolicitudes(std::string Solicitudes[], int &aux_TipoPersona, int
 }
 bool Nivel3::verificarParametros(int *auxReglas, int *auxSolicitudes){
     bool Decision=true;
-    int tipo_de_visita=auxReglas[1];
+    int tipo_de_visita=auxReglas[1];    // valor aleatorio entre 0 y 9 que indica el tipo de visita
+
+    // verificacion de nacionalidad y pais
+        // valores entre 0 y 19
     if(auxSolicitudes[0]==auxReglas[0]){
         Decision=false;
     }
+
+
+    // cada categoria de tipo de visita tiene 4 tipos, estos estan agrupados uno debajo del otro en el archivo
+        // lo que facilita el uso del indice del arreglo para controlar
     switch (tipo_de_visita) {
         case 0:
         if(auxSolicitudes[1]<4)
@@ -263,6 +277,8 @@ bool Nivel3::verificarParametros(int *auxReglas, int *auxSolicitudes){
         Decision=false;
     break;
     }
+
+    // verificacion de estado civil
     if(auxSolicitudes[2]==tipo_de_visita)
         Decision = false;
 

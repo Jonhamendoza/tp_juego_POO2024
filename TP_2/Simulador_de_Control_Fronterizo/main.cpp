@@ -66,6 +66,7 @@ int main()
     do {
 
         cout<<"Su puntuacion es: "<<Puntuacion<<endl;
+        cout<<"Cantidad de multas: "<<Multa<<endl;
         string Solicitudes[30];
 
 
@@ -132,6 +133,7 @@ int main()
     do {
 
         cout<<"Su puntuacion es: "<<Puntuacion<<endl;
+        cout<<"Cantidad de multas: "<<Multa<<endl;
         string Solicitudes[30];
 
 
@@ -216,6 +218,7 @@ int main()
     do {
 
         cout<<"Su puntuacion es: "<<Puntuacion<<endl;
+        cout<<"Cantidad de multas: "<<Multa<<endl;
         string Solicitudes[30];
 
 
@@ -300,6 +303,7 @@ int main()
     do {
 
         cout<<"Su puntuacion es: "<<Puntuacion<<endl;
+        cout<<"Cantidad de multas: "<<Multa<<endl;
         string Solicitudes[30];
 
 
@@ -384,6 +388,7 @@ int main()
     do {
 
         cout<<"Su puntuacion es: "<<Puntuacion<<endl;
+        cout<<"Cantidad de multas: "<<Multa<<endl;
         string Solicitudes[30];
 
 

@@ -5,6 +5,7 @@ RefugiadoPolitico::RefugiadoPolitico()
 
 }
 std::string* RefugiadoPolitico ::getID(){
+   // declaracion y apertura de archivos
     std::ifstream formatoID;
     std::string* ID = new std::string [9];
     formatoID.open("Nivel1/ID.txt");
@@ -18,6 +19,7 @@ std::string* RefugiadoPolitico ::getID(){
 }
 
 std::string* RefugiadoPolitico ::getPasaporte(){
+    // declaracion y apertura de archivos
     std::ifstream formatoPasaporte;
     std::string* Pasaporte = new std::string [15];
     formatoPasaporte.open("Nivel1/Pasaporte.txt");
@@ -30,6 +32,7 @@ std::string* RefugiadoPolitico ::getPasaporte(){
     return Pasaporte;
 }
 std::string* RefugiadoPolitico ::getDeclaracion(){
+// declaracion y apertura de archivos
     std::ifstream formatoDeclaracion;
     std::string* Declaracion = new std::string [6];
     formatoDeclaracion.open("Nivel1/declaracion.txt");
