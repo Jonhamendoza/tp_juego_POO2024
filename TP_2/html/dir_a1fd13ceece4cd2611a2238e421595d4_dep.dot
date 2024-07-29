@@ -1,0 +1,16 @@
+digraph "C:/Users/jonam/OneDrive/Documentos/POO/TP_2"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_6658659a7535f94e03be7e288c0d174f {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="POO", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_6658659a7535f94e03be7e288c0d174f.html",tooltip=""]
+  subgraph clusterdir_a1fd13ceece4cd2611a2238e421595d4 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_a1fd13ceece4cd2611a2238e421595d4.html",tooltip=""]
+    dir_a1fd13ceece4cd2611a2238e421595d4 [shape=plaintext, label="TP_2"];
+  dir_8d9c34d990afc67d1494e1465c2e1b62 [label="Simulador_de_Control\l_Fronterizo", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_8d9c34d990afc67d1494e1465c2e1b62.html",tooltip=""];
+  }
+  }
+}
